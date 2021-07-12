@@ -140,6 +140,11 @@ ul {
   clear: both;
 }
 
+.PiggyImage {
+  height: 400 px;
+  width: 300px;
+}
+
 
 @keyframes App-logo-spin {
   from {
