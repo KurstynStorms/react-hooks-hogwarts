@@ -1,13 +1,18 @@
-import React from "react"
+import React from 'react'
 
-const TileDetails = ({ hog }) => {
-  return(
-    <ul>
-      <li>Specialty: {hog.specialty}</li>
-      <li>Weight: {hog.weight}</li>
-      <li>Greased: {hog.greased ? "Yes" : "No"}</li>
-      <li>Highest Medal Achieved: {hog["highest medal achieved"]}</li>
-    </ul>
+function TileDetails({ hog }) {
+  const { greased, weight, "highest medal achieved": medal } = hog
+  return (
+    <div className="description">
+      <strong>{greased ? 'Greased' : 'Nongreased'}</strong>
+      <p>
+        Highest medal achived: <strong>{medal}</strong>
+      </p>
+      <p>
+        Weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator
+        with Thru-the-Door Ice and Water: <strong>{weight}</strong>
+      </p>
+    </div>
   )
 }
 

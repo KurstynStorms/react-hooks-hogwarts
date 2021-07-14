@@ -1,25 +1,17 @@
-import React, {useState} from "react"
-import Tile from "./Tile"
+import React from "react";
+import Tile from './Tile'
 
-const TileContainer = ({ hogs }) => {
-  const hogCards = hogs.map(hog => (
-    <Tile 
-    name={hog.name}
-    hog={hog}
-    />
-  ))
+function HogList({ hogs }) {
   return (
-    <div>
-        <label>
-          Filter
-          <select>
-            <option>Greased</option>
-            <option>Non Greased</option>
-          </select>
-        </label>
-        {hogCards}
-    </div>
-  )
+		<div className="ui three stackable cards">
+			{hogs.map(hog => (
+				<Tile
+					key={hog.name}
+					hog={hog}
+				/>
+			))}
+		</div>
+  );
 }
 
-export default TileContainer
+export default HogList
